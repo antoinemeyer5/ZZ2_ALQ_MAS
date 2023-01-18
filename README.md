@@ -10,9 +10,8 @@ I follow the **Google CPP guide style**, you can find it here: https://google.gi
 ├─ `ALQ_Consignes_F2-F3.pdf`    
 ├─ Reports/         
 │  └─ `ALQ_CahierDesCharges_AntoineMEYER.pdf`   
-├─ Diagrams/  
-│  ├─ GanttDiagram.png    
-|  └─ VersionsDiagram.png   
+├─ Diagrams/ 
+│  └─ {2 diagrams}
 └─ ForestEcosystem/
    ├─ Environment.cpp
    ├─ Environment.hpp
