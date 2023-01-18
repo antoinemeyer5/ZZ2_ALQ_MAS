@@ -1,6 +1,8 @@
 # ZZ2_ALQ_MAS
 
-The goal is to create a Multi-Agent Simulation code (MAS: distributed artificial intelligence on a domain). This MAS will be based on a "forest ecosystem".
+The goal is to create a **Multi-Agent Simulation** code (MAS: distributed artificial intelligence on a domain). This MAS will be based on a **forest ecosystem**.
+
+I follow the **Google CPP guide style**, you can find it here: https://google.github.io/styleguide/cppguide.html 
 
 ## Project structure
 
