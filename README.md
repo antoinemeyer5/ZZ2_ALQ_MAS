@@ -11,8 +11,11 @@ I follow the **Google CPP guide style**, you can find it here: https://google.gi
 ├─ Reports/         
 │  └─ `ALQ_CahierDesCharges_AntoineMEYER.pdf`   
 ├─ Diagrams/  
+│  ├─ GanttDiagram.png    
+|  └─ VersionsDiagram.png   
 └─ ForestEcosystem/
-   ├─ Environment/
+   ├─ Environment.cpp
+   ├─ Environment.hpp
    ├─ makefile
    └─ Simulation.cpp
 ```
