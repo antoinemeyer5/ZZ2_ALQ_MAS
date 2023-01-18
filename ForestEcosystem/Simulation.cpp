@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Environment/Environment.hpp"
+#include "Environment.hpp"
 
 int main(int, char**) {
     Environment environment(100, 10, 0);
