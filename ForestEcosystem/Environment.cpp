@@ -1,72 +1,116 @@
 #include "Environment.hpp"
 
-// Getters 
-int Environment::GetTreesNumber() {
-    return TreesNumber;
-}
-int Environment::GetPollution() {
-    return Pollution;
-}
-int Environment::GetWoodsNumber() {
-    return WoodsNumber;
+// Getters
+int Environment::GetEnvironmentAttributs(EnvironmentAttributs ea)
+{
+    int response = -1;
+    switch(ea)
+    {
+    case pollution:
+        response = Pollution;
+        break;
+    case trees:
+        response = TreesNumber;
+        break;
+    case wood:
+        response = WoodsNumber;
+        break;
+    case plank:
+        response = WoodenPlank;
+        break;
+    }
+    return response;
 }
 
 // Constructor
-Environment::Environment(int tn, int p, int wn) : TreesNumber(tn), Pollution(p), WoodsNumber(wn) {
-    
+Environment::Environment(int tn, int p, int wn, int wp) : TreesNumber(tn), Pollution(p), WoodsNumber(wn), WoodenPlank(wp)
+{
 }
 
 // Displays
-std::string Environment::SimpleDisplay() {
+std::string Environment::SimpleDisplay()
+{
     std::string display = "Environment => ";
-    display             = display + "Trees: "       + std::to_string(TreesNumber);
-    display             = display + "; Pollution: " + std::to_string(Pollution)     + "%";
-    display             = display + "; Woods: "     + std::to_string(WoodsNumber)   + "\n";
+    display = display + "Trees: " + std::to_string(TreesNumber);
+    display = display + "; Pollution: " + std::to_string(Pollution) + "%";
+    display = display + "; Woods: " + std::to_string(WoodsNumber) + "\n";
+    display = display + "; Planks: " + std::to_string(WoodenPlank) + "\n";
     return display;
 }
-std::string Environment::FullDisplay() {
-    std::string entitle     = "┌ Environment\n";
-    std::string trees       = "| Trees        " + std::to_string(TreesNumber) + "\n";
-    std::string pollution   = "| Pollution    " + std::to_string(Pollution)   + "%\n";
-    std::string woods       = "| Woods        " + std::to_string(WoodsNumber) + "\n";
-    std::string end         = "└\n";
-    return entitle + trees + pollution + woods + end;
+std::string Environment::FullDisplay()
+{
+    std::string entitle = "┌ Environment\n";
+    std::string trees = "| Trees        " + std::to_string(TreesNumber) + "\n";
+    std::string pollution = "| Pollution    " + std::to_string(Pollution) + "%\n";
+    std::string woods = "| Woods        " + std::to_string(WoodsNumber) + "\n";
+    std::string planks = "| Planks       " + std::to_string(WoodenPlank) + "\n";
+    std::string end = "└\n";
+    return entitle + trees + pollution + woods + planks + end;
 }
 
 // Increasers
-void Environment::IncreaseTreesNumber(int increase) {
-    TreesNumber = TreesNumber + increase;
-}
-void Environment::IncreasePollution(int increase) {
-    if (Pollution + increase >= 100) {
-        Pollution = 100;
-    } else {
-        Pollution = Pollution + increase;
+void Environment::Increase(int increase, EnvironmentAttributs valueName)
+{
+    switch (valueName)
+    {
+    case pollution:
+        if (Pollution + increase >= 100)
+        {
+            Pollution = 100;
+        }
+        else
+        {
+            Pollution = Pollution + increase;
+        }
+        break;
+    case trees:
+        TreesNumber = TreesNumber + increase;
+        break;
+    case wood:
+        WoodsNumber = WoodsNumber + increase;
+        break;
+    case plank:
+        WoodenPlank = WoodenPlank + increase;
+        break;
     }
-}
-void Environment::IncreaseWoodsNumber(int increase) {
-    WoodsNumber = WoodsNumber + increase;
 }
 
 // Decreasers
-void Environment::DecreaseTreesNumber(int decrease) {
-    if (TreesNumber - decrease <= 0) {
-        TreesNumber = 0;
-    } else {
-        TreesNumber = TreesNumber - decrease;
-    }
-}
-void Environment::DecreasePollution(int decrease) {
-    if (Pollution - decrease <= 0) {
-        Pollution = 0;
-    } else {
-        Pollution = Pollution - decrease;
-    }
-}
-void Environment::DecreaseWoodsNumber(int decrease) {
-    if (WoodsNumber - decrease <= 0) {
-        WoodsNumber = 0;
-    } else {
-        WoodsNumber = WoodsNumber - decrease;
+void Environment::Decrease(int decrease, EnvironmentAttributs ea)
+{
+    switch (ea)
+    {
+    case pollution:
+        if (Pollution - decrease <= 0)
+        {
+            Pollution = 0;
+        }
+        else
+        {
+            Pollution = Pollution - decrease;
+        }
+        break;
+    case trees:
+        if (TreesNumber - decrease <= 0)
+        {
+            TreesNumber = 0;
+        }
+        else
+        {
+            TreesNumber = TreesNumber - decrease;
+        }
+        break;
+    case wood:
+        if (WoodsNumber - decrease <= 0)
+        {
+            WoodsNumber = 0;
+        }
+        else
+        {
+            WoodsNumber = WoodsNumber - decrease;
+        }
+        break;
+    case plank:
+        break;
     }
 }
