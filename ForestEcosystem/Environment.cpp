@@ -23,29 +23,29 @@ int Environment::GetEnvironmentAttributs(EnvironmentAttributs ea)
 }
 
 // Constructor
-Environment::Environment(int tn, int p, int wn, int wp) : TreesNumber(tn), Pollution(p), WoodsNumber(wn), WoodenPlank(wp)
+Environment::Environment(int tn, int p, int wn, int wp) : Pollution(p), TreesNumber(tn), WoodsNumber(wn), WoodenPlank(wp)
 {
 }
 
 // Displays
 std::string Environment::SimpleDisplay()
 {
-    std::string display = "Environment => ";
-    display = display + "Trees: " + std::to_string(TreesNumber);
-    display = display + "; Pollution: " + std::to_string(Pollution) + "%";
-    display = display + "; Woods: " + std::to_string(WoodsNumber) + "\n";
+    std::string display = "(Environment) ";
+    display = display + "Pollution: " + std::to_string(Pollution) + "%";
+    display = display + "; Trees: " + std::to_string(TreesNumber);
+    display = display + "; Woods: " + std::to_string(WoodsNumber);
     display = display + "; Planks: " + std::to_string(WoodenPlank) + "\n";
     return display;
 }
 std::string Environment::FullDisplay()
 {
     std::string entitle = "┌ Environment\n";
-    std::string trees = "| Trees        " + std::to_string(TreesNumber) + "\n";
     std::string pollution = "| Pollution    " + std::to_string(Pollution) + "%\n";
+    std::string trees = "| Trees        " + std::to_string(TreesNumber) + "\n";
     std::string woods = "| Woods        " + std::to_string(WoodsNumber) + "\n";
     std::string planks = "| Planks       " + std::to_string(WoodenPlank) + "\n";
     std::string end = "└\n";
-    return entitle + trees + pollution + woods + planks + end;
+    return entitle + pollution + trees + woods + planks + end;
 }
 
 // Increasers

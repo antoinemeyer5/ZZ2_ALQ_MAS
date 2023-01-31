@@ -1,4 +1,4 @@
-SRC=Simulation.cpp Environment.cpp
+SRC=Simulation.cpp Environment.cpp Agent.cpp Lumberjack.cpp
 #SRC=$(wildcard *.cpp)  
 EXE=ForestEcosystem
 

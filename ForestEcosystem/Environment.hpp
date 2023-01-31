@@ -1,3 +1,6 @@
+#ifndef ENVIRONMENT_HPP
+#define ENVIRONMENT_HPP
+
 // Imports
 #include <string>
 
@@ -18,17 +21,20 @@ class Environment {
         int WoodenPlank;
 
     public:
-        // Getters 
+        // Getters / Sensors
         int GetEnvironmentAttributs(EnvironmentAttributs);
         // Constructor
         Environment(int, int, int, int);
         // Displays
         std::string SimpleDisplay();
         std::string FullDisplay();
-        // Setters
+        // Setters / Actuators
+        // concatenation de ces methodes non ?
         // Increasers
         void Increase(int, EnvironmentAttributs);
         // Decreasers
         void Decrease(int, EnvironmentAttributs);
 
 };
+
+#endif
