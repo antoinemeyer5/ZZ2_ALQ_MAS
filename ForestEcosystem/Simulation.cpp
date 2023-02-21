@@ -2,10 +2,12 @@
 #include <typeinfo>
 #include "Environment.hpp"
 #include "Lumberjack.hpp"
+#include "Carpenter.hpp"
 
 int main(int, char**) {
     Environment environment(100, 10, 0, 0);
     Lumberjack a;
+    Carpenter b;
 
     // TODO
     // - faire une liste d'agents (bucheron, menuisier, etc)
@@ -19,7 +21,8 @@ int main(int, char**) {
         std::cout << a.toString();
         a.DoSomething(environment);
         // menuisier change son status puis fait quelque chose 
-        // TODO
+        std::cout << b.toString();
+        b.DoSomething(environment);
         // environnement se regenere un peu
         environment.Increase(10, trees);
         std::cout << "==> Environment increase 10 trees\n";
