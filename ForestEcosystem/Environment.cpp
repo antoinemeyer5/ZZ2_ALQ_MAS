@@ -23,7 +23,7 @@ int Environment::GetEnvironmentAttributs(EnvironmentAttributs ea)
 }
 
 // Constructor
-Environment::Environment(int tn, int p, int wn, int wp) : Pollution(p), TreesNumber(tn), WoodsNumber(wn), WoodenPlank(wp)
+Environment::Environment(int tn, int p, int wn, int wp) : TreesNumber(tn), Pollution(p), WoodsNumber(wn), WoodenPlank(wp)
 {
 }
 
@@ -47,6 +47,22 @@ std::string Environment::FullDisplay()
     std::string end = "└\n";
     return entitle + pollution + trees + woods + planks + end;
 }
+std::string Environment::BarDisplay()
+{
+    std::string pollu_bar = "Pollution " + std::to_string(Pollution) + "%[";
+    for(int i=0; i<100; i++){
+        if(i < Pollution){
+            pollu_bar = pollu_bar + "-";
+        }else{
+            pollu_bar = pollu_bar + " ";
+        }
+    }
+    pollu_bar = pollu_bar + "]\n";
+    std::string tree_bar = "Trees " + std::to_string(TreesNumber) + "\n";
+    std::string wood_bar = "└>Woods " + std::to_string(WoodsNumber) + "\n";
+    std::string plank_bar = "  └>Planks " + std::to_string(WoodenPlank) + "\n";
+    return pollu_bar + tree_bar + wood_bar + plank_bar;
+}
 
 // Increasers
 void Environment::Increase(int increase, EnvironmentAttributs valueName)
@@ -65,6 +81,7 @@ void Environment::Increase(int increase, EnvironmentAttributs valueName)
         break;
     case trees:
         TreesNumber = TreesNumber + increase;
+        //std::cout << "==> Environment increase trees\n";
         break;
     case wood:
         WoodsNumber = WoodsNumber + increase;
@@ -84,30 +101,36 @@ void Environment::Decrease(int decrease, EnvironmentAttributs ea)
         if (Pollution - decrease <= 0)
         {
             Pollution = 0;
+            //std::cout << "==> Environment have 0 pollution!\n";
         }
         else
         {
             Pollution = Pollution - decrease;
+            //std::cout << "==> Environment decrease " + std::to_string(decrease) + " pollution\n";
         }
         break;
     case trees:
         if (TreesNumber - decrease <= 0)
         {
             TreesNumber = 0;
+            //std::cout << "==> Environment have 0 tree...\n";
         }
         else
         {
             TreesNumber = TreesNumber - decrease;
+            //std::cout << "==> Environment decrease " + std::to_string(decrease) + " trees\n";
         }
         break;
     case wood:
         if (WoodsNumber - decrease <= 0)
         {
             WoodsNumber = 0;
+            //std::cout << "==> Environment have 0 wood...\n";
         }
         else
         {
             WoodsNumber = WoodsNumber - decrease;
+            //std::cout << "==> Environment decrease " + std::to_string(decrease) + " woods\n";
         }
         break;
     case plank:

@@ -62,7 +62,7 @@ std::string Agent::toString()
         display = display + "waiting";
         break;
     }
-    display = display + " and sleep " + std::to_string(sleep) + "%\n";
+    display = display + " and his sleep is " + std::to_string(sleep) + "%\n";
     return display;
 }
 

@@ -7,29 +7,24 @@ int main(int, char**) {
     Environment environment(100, 10, 0, 0);
     Lumberjack a;
 
-    // etat bucheron 
-    //std::cout << a.toString();
-    // etat environnement
-    // std::cout << environment.SimpleDisplay();
-
+    // TODO
+    // - faire une liste d'agents (bucheron, menuisier, etc)
+    // - tirer au hasard l'ordre dans lequel il travaille (ajout d'aleatoire)
 
     // tour de simulation
     for(int i=1; i<12; i++) {
-        std::cout << "Start of the round n°" << i << ": ";
-        std::cout << environment.SimpleDisplay();
+        std::cout << "Start of the round n°" << i << ": \n";
+        std::cout << environment.BarDisplay();
         // bucheron change son statut puis fait quelque chose
         std::cout << a.toString();
         a.DoSomething(environment);
-        // etat bucheron 
-        // std::cout << a.toString();
-        std::cout << "End of the round n°" << i << ": ";
-        // etat environnement
-        std::cout << environment.SimpleDisplay() << "\n";
+        // menuisier change son status puis fait quelque chose 
+        // TODO
+        // environnement se regenere un peu
+        environment.Increase(10, trees);
+        std::cout << "==> Environment increase 10 trees\n";
+        environment.Decrease(5, pollution);
+        std::cout << "==> Environment decrease 5 pollution\n";
     }
-
-    //environment.Increase(200, trees);
-    //std::cout << environment.FullDisplay();
-    //environment.Decrease(50, pollution);
-    //std::cout << environment.FullDisplay();
     return 0;
 }

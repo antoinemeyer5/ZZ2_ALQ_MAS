@@ -3,6 +3,7 @@
 
 // Imports
 #include <string>
+#include <iostream>
 
 enum EnvironmentAttributs { pollution, trees, wood, plank };
 
@@ -10,11 +11,11 @@ enum EnvironmentAttributs { pollution, trees, wood, plank };
 class Environment {
 
     private:
-        // State of nature (between 0% and 100%)
-        int Pollution;
         // Trees => Wood => Plank
         // State of the forest
         int TreesNumber;
+        // State of nature (between 0% and 100%)
+        int Pollution;
         // State of wood stock
         int WoodsNumber;
         // Number of wooden plank (~final score)
@@ -28,6 +29,7 @@ class Environment {
         // Displays
         std::string SimpleDisplay();
         std::string FullDisplay();
+        std::string BarDisplay();
         // Setters / Actuators
         // concatenation de ces methodes non ?
         // Increasers
