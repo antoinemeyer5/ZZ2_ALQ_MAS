@@ -80,7 +80,7 @@ void Lumberjack::DoSomething(Environment &e)
         // => augmente bois & pollution
         e.Increase(10, wood);
         e.Increase(15, pollution);
-        std::cout << "==> Lumberjack work so sleep-20, trees-20, wood+10 & pollution+15\n";
+        std::cout << "==> Lumberjack work so sleep-20, trees-20, \033[43mwood+10\033[0m & \033[41mpollution+15\033[0m\n";
         break;
     case waiting:
         // augmente repos

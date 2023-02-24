@@ -49,18 +49,28 @@ std::string Environment::FullDisplay()
 }
 std::string Environment::BarDisplay()
 {
-    std::string pollu_bar = "Pollution " + std::to_string(Pollution) + "%[";
+    std::string pollu_bar = "\033[41mPollution " + std::to_string(Pollution) + "%\033[0m[";
     for(int i=0; i<100; i++){
         if(i < Pollution){
-            pollu_bar = pollu_bar + "-";
+            if(i < 30){
+                // green
+                pollu_bar = pollu_bar + "\033[32m";
+            }else if(i < 60){
+                // yellow
+                pollu_bar = pollu_bar + "\033[33m";
+            }else{
+                // red
+                pollu_bar = pollu_bar + "\033[31m";
+            }
+            pollu_bar = pollu_bar + "-\033[0m";
         }else{
             pollu_bar = pollu_bar + " ";
         }
     }
     pollu_bar = pollu_bar + "]\n";
-    std::string tree_bar = "Trees " + std::to_string(TreesNumber) + "\n";
-    std::string wood_bar = "└>Woods " + std::to_string(WoodsNumber) + "\n";
-    std::string plank_bar = "  └>Planks " + std::to_string(WoodenPlank) + "\n";
+    std::string tree_bar = "\033[42mTrees " + std::to_string(TreesNumber) + "\033[0m\n";
+    std::string wood_bar = "└>\033[43mWoods " + std::to_string(WoodsNumber) + "\033[0m\n";
+    std::string plank_bar = "  └>\033[44mPlanks " + std::to_string(WoodenPlank) + "\033[0m\n";
     return pollu_bar + tree_bar + wood_bar + plank_bar;
 }
 

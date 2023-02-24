@@ -15,7 +15,7 @@ int main(int, char**) {
 
     // tour de simulation
     for(int i=1; i<12; i++) {
-        std::cout << "Start of the round n°" << i << ": \n";
+        std::cout << "\033[4mStart of the round n°" << i << ":\033[0m\n";
         std::cout << environment.BarDisplay();
         // bucheron change son statut puis fait quelque chose
         std::cout << a.toString();
@@ -25,9 +25,10 @@ int main(int, char**) {
         b.DoSomething(environment);
         // environnement se regenere un peu
         environment.Increase(10, trees);
-        std::cout << "==> Environment increase 10 trees\n";
+        std::cout << "==> Environment increase \033[42m10 trees\033[0m\n";
         environment.Decrease(5, pollution);
         std::cout << "==> Environment decrease 5 pollution\n";
+        std::cout << "\n";
     }
     return 0;
 }

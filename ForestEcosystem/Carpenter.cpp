@@ -62,7 +62,7 @@ void Carpenter::DoSomething(Environment &e)
             Agent::decreaseSleep(20);
             e.Increase(10, plank);
             e.Increase(10, pollution);
-            std::cout << "==> Carpenter work, wood-10, sleep-20, plank+10 & pollution+10\n";
+            std::cout << "==> Carpenter work, wood-10, sleep-20, \033[44mplank+10\033[0m & \033[41mpollution+10\033[0m\n";
             break;
         case waiting:
             Agent::increaseSleep(5);
