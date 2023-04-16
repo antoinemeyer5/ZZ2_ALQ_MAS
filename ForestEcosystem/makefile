@@ -1,7 +1,7 @@
-SRC=Simulation.cpp Environment.cpp Agent.cpp Lumberjack.cpp Carpenter.cpp
-EXE=ForestEcosystem
-#SRC=Environment.cpp tests.cpp Agent.cpp Lumberjack.cpp Carpenter.cpp
-#EXE=TestForestEcosystem
+#SRC=Simulation.cpp Environment.cpp Agent.cpp Lumberjack.cpp Carpenter.cpp
+#EXE=ForestEcosystem
+SRC=Environment.cpp tests.cpp Agent.cpp Lumberjack.cpp Carpenter.cpp
+EXE=TestForestEcosystem
 CXX=g++
 CXXFLAGS+=-Wall -Wextra -MMD -g
 LDFLAGS= #-lSDL

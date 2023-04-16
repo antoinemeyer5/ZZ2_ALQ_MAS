@@ -19,7 +19,7 @@ int main(int, char**) {
 
     // tour de simulation
     for(int i=1; i<12; i++) {
-        std::cout << "\033[4mStart of the round n°" << i << ":\033[0m\n\n";
+        std::cout << "\n\033[4mStart of the round n°" << i << ":\033[0m\n";
         std::cout << environment.BarDisplay();
         // pour chaque acteurs
         for(int i=0; i<4; i++) {
