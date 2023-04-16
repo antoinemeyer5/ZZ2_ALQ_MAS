@@ -1,8 +1,9 @@
 SRC=Simulation.cpp Environment.cpp Agent.cpp Lumberjack.cpp Carpenter.cpp
-#SRC=$(wildcard *.cpp)  
 EXE=ForestEcosystem
-
-CXXFLAGS+=-Wall -Wextra -MMD -g -O2
+#SRC=Environment.cpp tests.cpp Agent.cpp Lumberjack.cpp Carpenter.cpp
+#EXE=TestForestEcosystem
+CXX=g++
+CXXFLAGS+=-Wall -Wextra -MMD -g
 LDFLAGS= #-lSDL
 
 OBJ=$(addprefix build/,$(SRC:.cpp=.o))
